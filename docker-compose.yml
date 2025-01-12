@@ -1,0 +1,13 @@
+services:
+  app:
+    container_name: tiktokservice
+    build: .
+    ports:
+      - "3000:3000"
+    env_file:
+      - ./.env
+    environment:
+      - MONGODB_COSMO_URI=${MONGODB_COSMO_URI}
+      - JWT_SECRET=${JWT_SECRET}
+      - AZURE_SAS_CONTAINER_URL=${AZURE_SAS_CONTAINER_URL}
+      - PORT=${PORT}

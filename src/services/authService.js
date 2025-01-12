@@ -3,7 +3,7 @@ const jwt = require("jsonwebtoken");
 const User = require("../models/User");
 require("dotenv").config();
 
-const JWT_SECRET = process.env.JWT_SECRET;
+const JWT_SECRET = process.env.JWT_SECRET || "!@#Jwt$eCret*helaknadjkj473s";
 
 const registerUser = async (username, password, role) => {
   const existingUser = await User.findOne({ username });
